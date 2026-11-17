@@ -326,11 +326,11 @@ function tplVertical(start){
   return {name:'30-Day Vertical Jump',start,phases,tests:[
     {name:'Standing vertical',unit:'in'},{name:'Approach vertical',unit:'in'},{name:'Max touch height',unit:'cm'},{name:'Back squat (est. max)',unit:'kg'}]};
 }
-function tplTigi(start){
+function tplStrength(start){
   const P=(name,from,to,note,days)=>({name,from,to,note,days});
   const D=(name,wd,focus,list)=>({name,wd,focus,ex:list});
   const wu='Every session: 10-min warm-up (gratitude moment, cardio, mobility, band pull-aparts, sprints), then 5-min cool-down.';
-  return {name:'12-Week Strength Program',start,warmup:TIGI_WU(),cooldown:TIGI_CD(),tests:[
+  return {name:'12-Week Strength Program',start,warmup:STR_WU(),cooldown:STR_CD(),tests:[
     {name:'Broad jump',unit:'cm'},{name:'Dead hang',unit:'sec'},{name:"Farmer's walk max distance",unit:'m'},
     {name:'Front plank',unit:'sec'},{name:'Med ball rotational throw L',unit:'m'},{name:'Med ball rotational throw R',unit:'m'}],
   phases:[
@@ -340,13 +340,13 @@ function tplTigi(start){
     D('Strength B: Hinge, Push + Grip',5,'Hard day',[ex('Dumbbell Romanian deadlift','3 × 8','reps','Hips back, flat back, soft knees'),ex('Glute bridge','3 × 10','reps','Pause 2 s at the top',false),ex('Push-up','3 × 6–10','reps','Hands on a bench if form breaks',false),ex('One-arm dumbbell row','3 × 8/side','reps','Elbow to hip'),ex("Farmer's walk",'3 × 30 m','m','Tall posture, tight core'),ex('Pallof press','3 × 8/side','reps','Resist the band',false)]),
     D('Power, Grip + Carries',0,'Moderate and fun',[ex('Box jump','3 × 3','reps','Same box as Wednesday',false),ex('Broad jump and stick','3 × 3','cm','Freeze the landing',false),ex('Med ball slam','3 × 6','reps','Reach tall, slam hard'),ex("Farmer's walk",'3 × 30 m','m','Same weight as Friday'),ex('Suitcase carry','2 × 20 m/side','m',"One dumbbell, don't lean"),ex('Plate pinch hold','3 × 15 s','sec','Smooth side out')])]),
    P('Regular Season',5,8,'Get stronger: heavier loads, harder versions. Rest 90 s on strength lifts. Week 8 is lighter: one fewer set each.',[
-    D('Strength A: Legs + Pull',2,'Hardest day',[ex('Goblet squat','4 × 6–8','reps','Heavier than Phase 1'),ex('Rear-foot elevated split squat','3 × 6/leg','reps','Add light dumbbells once easy'),ex('Lat pulldown / band-assisted pull-up','3 × 6–8','reps','Chest up, pull to upper chest'),ex('Inverted row','3 × 10','reps','Feet further forward',false),ex('Dead hang','3 × 30 s','sec','',false),ex('Hanging leg raise','3 × 5–8','reps','Straighter legs as she improves',false)]),
+    D('Strength A: Legs + Pull',2,'Hardest day',[ex('Goblet squat','4 × 6–8','reps','Heavier than Phase 1'),ex('Rear-foot elevated split squat','3 × 6/leg','reps','Add light dumbbells once easy'),ex('Lat pulldown / band-assisted pull-up','3 × 6–8','reps','Chest up, pull to upper chest'),ex('Inverted row','3 × 10','reps','Feet further forward',false),ex('Dead hang','3 × 30 s','sec','',false),ex('Hanging leg raise','3 × 5–8','reps','Straighter legs as you improve',false)]),
     D('Explosive + Core',3,'Fast and snappy',[ex('Box jump','4 × 3','reps','Raise box 5–10 cm only if landings stay soft',false),ex('Lateral box jump','3 × 3/side','reps','Step down',false),ex('Med ball rotational scoop toss','3 × 5/side','reps','3 kg, explode from the back hip'),ex('Skater hops','3 × 5/side','reps','',false),ex('Hanging leg raise','3 × 6','reps','Slow on the way down',false),ex('Side plank with reach-through','2 × 6/side','reps','',false)]),
     D('Strength B: Hinge, Push + Grip',5,'Hard day',[ex('Trap bar deadlift','4 × 5','reps','Start light, learn with a coach'),ex('Dumbbell hip thrust','3 × 10','reps','Pause at the top'),ex('Push-up','3 × 8–12','reps','Full push-ups now',false),ex('Half-kneeling one-arm DB press','3 × 8/side'),ex("Farmer's walk",'4 × 40 m','m','Heavier than Phase 1'),ex('Pallof press with hold','3 × 6/side','reps','Hold 3 s at full extension',false)]),
     D('Power, Grip + Carries',0,'Moderate and fun',[ex('Box jump','3 × 3','reps','Max intent, soft landings',false),ex('Broad jump, 2 in a row','3 × 2','cm','Stick the second',false),ex('Med ball rotational slam','3 × 5/side'),ex("Farmer's walk",'3 × 40 m','m'),ex('Front rack carry','2 × 30 m','m'),ex('Towel hang','3 × 15–20 s','sec','Huge grip builder',false),ex('Wrist roller','2 rounds','reps','Forearms for bat speed')])]),
    P('Finals Series',9,12,'Strength into speed: do each 1a then 1b, rest 60 s, repeat. Full effort on every jump and throw. Week 12 is lighter, then retest.',[
     D('Strength A + Power Pairs',2,'Hardest day',[ex('1a. Goblet / front squat','4 × 5','reps','Heaviest clean reps of the program'),ex('1b. Box jump','4 × 3','reps','Straight after the squats',false),ex('2a. Rear-foot elevated split squat','3 × 6/leg'),ex('2b. Split squat jump','3 × 4/leg','reps','Land soft',false),ex('Pull-up (assisted if needed)','3 × 4–6','reps','Full hang to chin over bar',false),ex('Hanging leg raise','3 × 8','reps','',false)]),
-    D('Explosive + Core',3,'Fast and snappy',[ex('Single-leg box jump','3 × 3/leg','reps','Land on two feet',false),ex('Lateral bound to sprint','4 × 1/side','reps','Bound, stick, sprint 10 m',false),ex('Med ball rotational scoop toss','4 × 4/side','reps','Max effort: this is her swing'),ex('Med ball overhead throw','3 × 5'),ex('Ab wheel rollout','3 × 6','reps','Stop before the lower back sags',false),ex('Copenhagen plank','2 × 15 s/side','sec','',false)]),
+    D('Explosive + Core',3,'Fast and snappy',[ex('Single-leg box jump','3 × 3/leg','reps','Land on two feet',false),ex('Lateral bound to sprint','4 × 1/side','reps','Bound, stick, sprint 10 m',false),ex('Med ball rotational scoop toss','4 × 4/side','reps','Max effort: this is your swing'),ex('Med ball overhead throw','3 × 5'),ex('Ab wheel rollout','3 × 6','reps','Stop before the lower back sags',false),ex('Copenhagen plank','2 × 15 s/side','sec','',false)]),
     D('Strength B + Power Pairs',5,'Hard day',[ex('1a. Trap bar deadlift','4 × 4','reps','2–3 reps in the tank'),ex('1b. Broad jump','4 × 2','cm','Explode out of the lift',false),ex('2a. Push-up (vest or feet raised)','3 × 8','reps','',false),ex('2b. Med ball chest pass','3 × 5'),ex('One-arm dumbbell row','3 × 8/side'),ex("Heavy farmer's walk",'4 × 30 m','m','Heaviest carries of the program')]),
     D('Power, Grip + Carries',0,'Moderate and fun',[ex('Box jump (higher box)','3 × 3','reps','Only if landings stay soft',false),ex('Lateral box jump','3 × 3/side','reps','',false),ex('Med ball rotational slam','3 × 5/side'),ex("Farmer's + suitcase carry",'3 rounds','m','30 m farmer’s then 20 m suitcase each side'),ex('Towel pull-up hang','3 × 20 s','sec','',false),ex('Plate pinch hold','3 × 30 s','sec','Heavier plates'),ex('Wrist roller','3 rounds')])])]};
 }
@@ -363,22 +363,19 @@ const PRAY_START=`Heavenly Father, as I prepare to begin this workout, I ask you
 As I sweat and grind at the gym, may this workout be a reminder of the greater battles we face in life, and may I draw strength from the knowledge that you are with me always.
 In your holy name, I pray and train. Amen.`;
 const PRAY_END=`Lord Jesus, you invite us to do everything in this life for your greater glory. Thank you for giving me this opportunity to praise you through physical exercise. May I ever keep in mind that You are my strength and my shield. Having attuned my mind to Your Will may I overcome the weakness of the flesh. Amen.`;
-const TIGI_WU=()=>[{name:'Light cardio (rope, bike or jog)',amt:'3 min'},{name:"World's greatest stretch",amt:'3 per side'},{name:'Bodyweight squats',amt:'10'},{name:'Walking lunge with twist',amt:'6 per leg'},{name:'Glute bridges',amt:'10'},{name:'Band pull-aparts',amt:'15'},{name:'Arm circles',amt:'10 each way'},{name:'Fast sprints or skips',amt:'2 × 10 m'}];
-const TIGI_CD=()=>[{name:'Easy walk',amt:'1–2 min'},{name:'Hip flexor stretch',amt:'30 s per side'},{name:'Hamstring stretch',amt:'30 s per side'},{name:'Sleeper stretch (gentle)',amt:'30 s per side'},{name:"Child's pose",amt:'30 s'}];
+const STR_WU=()=>[{name:'Light cardio (rope, bike or jog)',amt:'3 min'},{name:"World's greatest stretch",amt:'3 per side'},{name:'Bodyweight squats',amt:'10'},{name:'Walking lunge with twist',amt:'6 per leg'},{name:'Glute bridges',amt:'10'},{name:'Band pull-aparts',amt:'15'},{name:'Arm circles',amt:'10 each way'},{name:'Fast sprints or skips',amt:'2 × 10 m'}];
+const STR_CD=()=>[{name:'Easy walk',amt:'1–2 min'},{name:'Hip flexor stretch',amt:'30 s per side'},{name:'Hamstring stretch',amt:'30 s per side'},{name:'Sleeper stretch (gentle)',amt:'30 s per side'},{name:"Child's pose",amt:'30 s'}];
 const tplFree=()=>({name:'My workouts',start:today(),phases:[],tests:[]});
 const TEMPLATES=[
   {k:'vertical',name:'30-Day Vertical Jump',d:'4 weeks · Tue/Wed/Fri · lifting + plyos',make:()=>fillRest(tplVertical(nextWeekday(2)))},
-  {k:'tigi',name:'12-Week Strength Program',d:'3 phases · Tue/Wed/Fri/Sun · grip, core, power',make:()=>fillRest(tplTigi(nextWeekday(2)))},
+  {k:'strength',name:'12-Week Strength Program',d:'3 phases · Tue/Wed/Fri/Sun · grip, core, power',make:()=>fillRest(tplStrength(nextWeekday(2)))},
   {k:'free',name:'Free training',d:'No set plan. Log whatever you do and repeat past workouts.',make:tplFree}];
 
 /* ---------- state ---------- */
 const KEY='repbook.v1';
 let S, mem=false;
 function fresh(){
-  return {v:1,welcomed:false,active:null,hideInstall:false,sound:true,keepAwake:true,alarm:'church',prayers:{start:PRAY_START,end:PRAY_END},profiles:[
-    {id:uid(),name:'Jasha',color:'#d4af50',rest:120,program:fillRest(tplVertical('2026-11-17'))},
-    {id:uid(),name:'Tigi',color:'#8fb8e8',rest:75,program:fillRest(tplTigi(nextWeekday(2)))},
-    {id:uid(),name:'Teonie (aka best mum ever)',color:'#e39a85',rest:60,program:tplFree()}],
+  return {v:1,welcomed:false,active:null,hideInstall:false,sound:true,keepAwake:true,alarm:'church',prayers:{start:PRAY_START,end:PRAY_END},profiles:[{id:uid(),ph:true,name:'',color:'#d4af50',rest:90,program:tplFree()}],
     logs:[],tests:[],drafts:{}};
 }
 function load(){try{const r=localStorage.getItem(KEY);if(r){S=JSON.parse(r);return}}catch(e){mem=true}S=fresh()}
@@ -388,7 +385,7 @@ if(!S.profiles.length)S.profiles=fresh().profiles;
 if(!S.profiles.find(p=>p.id===S.active))S.active=S.profiles[0].id;
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 (function migrate(){let ch=false;const fix=e=>{if(e&&e.name==='Med ball backward throw'){Object.assign(e,{name:'Kettlebell swing',target:'4 × 5',cue:'Snap the hips hard. Kettlebell or one dumbbell.',load:true});ch=true}};
-  S.profiles.forEach(p=>(p.program.phases||[]).forEach(ph=>ph.days.forEach(d=>d.ex.forEach(fix))));S.profiles.forEach(p=>{fillRest(p.program);if(p.name==='Me')p.name='Jasha';if(p.name==='Mum')p.name='Teonie (aka best mum ever)';const CM={'#ff7a1a':'#d4af50','#4da3ff':'#8fb8e8','#3ecf8e':'#e39a85','#f2c94c':'#e8d8b0','#e86ad9':'#c9a0dc','#9b8cff':'#c9a0dc','#ff5d5d':'#e39a85'};if(CM[p.color])p.color=CM[p.color];if(/12-week/i.test(p.program.name)&&!p.program.warmup){p.program.warmup=TIGI_WU();p.program.cooldown=TIGI_CD()}});
+  S.profiles.forEach(p=>(p.program.phases||[]).forEach(ph=>ph.days.forEach(d=>d.ex.forEach(fix))));S.profiles.forEach(p=>{fillRest(p.program);const CM={'#ff7a1a':'#d4af50','#4da3ff':'#8fb8e8','#3ecf8e':'#e39a85','#f2c94c':'#e8d8b0','#e86ad9':'#c9a0dc','#9b8cff':'#c9a0dc','#ff5d5d':'#e39a85'};if(CM[p.color])p.color=CM[p.color];if(/12-week/i.test(p.program.name)&&!p.program.warmup){p.program.warmup=STR_WU();p.program.cooldown=STR_CD()}});
   if(S.sound===undefined)S.sound=true;if(!S.alarm)S.alarm='church';if(S.keepAwake===undefined)S.keepAwake=true;if(!S.prayers)S.prayers={start:PRAY_START,end:PRAY_END};ch=true;
   Object.values(S.drafts||{}).forEach(D=>Object.values(D).forEach(dr=>dr.entries.forEach(fix)));if(ch)save(true)})();
 const prof=()=>S.profiles.find(p=>p.id===S.active);
@@ -970,10 +967,18 @@ function obRender(){
       (deferred?'':stepsHtml(isIOS?['Tap the <b>Share</b> button (the square with an arrow ⬆︎) at the bottom of Safari','Scroll down and tap <b>Add to Home Screen</b>','Tap <b>Add</b>, then open <b>Athleta</b> from your home screen']:isAndroid?['Tap the <b>⋮</b> menu at the top right of Chrome','Tap <b>Install app</b> or <b>Add to Home screen</b>','Open <b>Athleta</b> from your home screen']:['Use your browser menu to <b>Install</b> this app']));
     f=(deferred?`<button class="btn pri full" data-act="obinstall">Install the app</button>`:'')+`<button class="btn ghost full" data-act="obnext">Continue in the browser for now</button>`;
   }else if(k==='who'){
-    m=`<div class="logo">${OBMARK}</div><h2>Who's training?</h2><p class="lead">Pick your name. Everything you log stays on this phone.</p><div class="list">`+
-      S.profiles.map(p=>`<button class="opt ${p.id===S.active?'on':''}" data-act="obpick" data-id="${p.id}"><span class="av" style="background:${esc(p.color)}">${esc((p.name.trim()[0]||'?').toUpperCase())}</span><div class="sp">${esc(p.name)}<small>${esc(p.program.name)}</small></div></button>`).join('')+
-      `<button class="btn ghost full" data-act="addperson">Someone else</button></div>`;
-    f=`<button class="btn pri full" data-act="obnext">Continue</button>`;
+    const ph=S.profiles.length===1&&S.profiles[0].ph;
+    if(ph){const sel=ob.tpl||'vertical';
+      m=`<div class="logo">${OBMARK}</div><h2>Welcome</h2><p class="lead">What's your name, and what are you training for?</p>
+        <label class="f" for="obname">Your name<input class="fi" id="obname" autocomplete="given-name" value="${esc(ob.name||'')}" placeholder="First name"></label>
+        <div class="list">`+TEMPLATES.map(t=>`<button class="opt ${t.k===sel?'on':''}" data-act="obtpl" data-k="${t.k}"><div class="sp">${esc(t.name)}<small>${esc(t.d)}</small></div><span style="color:var(--accent)">${t.k===sel?'✓':''}</span></button>`).join('')+`</div>`;
+      f=`<button class="btn pri full" data-act="obsave">Continue</button>`;
+    }else{
+      m=`<div class="logo">${OBMARK}</div><h2>Who's training?</h2><p class="lead">Pick your name. Everything you log stays on this phone.</p><div class="list">`+
+        S.profiles.map(p=>`<button class="opt ${p.id===S.active?'on':''}" data-act="obpick" data-id="${p.id}"><span class="av" style="background:${esc(p.color)}">${esc((p.name.trim()[0]||'?').toUpperCase())}</span><div class="sp">${esc(p.name)}<small>${esc(p.program.name)}</small></div></button>`).join('')+
+        `<button class="btn ghost full" data-act="addperson">Someone else</button></div>`;
+      f=`<button class="btn pri full" data-act="obnext">Continue</button>`;
+    }
   }else if(k==='notif'){
     const perm=Notification.permission;
     m=`<div class="logo">${OBMARK}</div><h2>Rest alerts</h2><p class="lead">Allow notifications so Athleta can tell you when your rest is over, even if you switch to another app.</p>`+
@@ -993,7 +998,10 @@ function obRender(){
 }
 function obOpen(){ob={step:0,msg:''};$('#ob').classList.add('on');obRender()}
 Object.assign(A,{
-  obnext(){ob.step++;ob.msg='';const L=obSteps();if(ob.step>=L.length){A.obdone();return}obRender()},
+  obtpl(el){const n=$('#obname');if(n)ob.name=n.value;ob.tpl=el.dataset.k;obRender()},
+  obsave(){const n=($('#obname')||{}).value||'';if(!n.trim()){toast('Enter your name');return}const p=S.profiles[0];const t=TEMPLATES.find(x=>x.k===(ob.tpl||'vertical'));
+    p.name=n.trim();p.program=t.make();p.rest=t.k==='vertical'?120:t.k==='strength'?75:60;delete p.ph;S.active=p.id;save(true);resetPos();render(false);ob.step++;obRender()},
+  obnext(){if(S.profiles.length===1&&S.profiles[0].ph&&obSteps()[ob.step]==='who'){A.obsave();return}ob.step++;ob.msg='';const L=obSteps();if(ob.step>=L.length){A.obdone();return}obRender()},
   obpick(el){S.active=el.dataset.id;save();resetPos();render(false);obRender()},
   obinstall(){if(!deferred)return;deferred.prompt();deferred.userChoice.finally(()=>{deferred=null;obRender()})},
   obnotif(){try{Notification.requestPermission().then(r=>{ob.msg=r==='granted'?'':r==='denied'?'':'You can turn this on later in Settings.';if(r==='granted'){try{navigator.serviceWorker&&navigator.serviceWorker.ready.then(g=>g.showNotification('Rest alerts are on',{body:'We\'ll tell you when it\'s time for your next set.',icon:'icons/icon-192.png',tag:'rest'}))}catch(e){}}obRender()})}catch(e){ob.step++;obRender()}},

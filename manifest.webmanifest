@@ -1,7 +1,7 @@
 {
   "name": "Athleta Christi",
   "short_name": "Athleta",
-  "description": "Athleta Christi · the Jenkins family workout app",
+  "description": "Athleta Christi workout tracker",
   "id": "./",
   "start_url": "./",
   "scope": "./",
