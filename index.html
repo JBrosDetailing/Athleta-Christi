@@ -514,8 +514,8 @@ async function loadReadings(date){
   rdCache[date]={state:'loading'};
   const [y,m,d]=date.split('-');
   try{
-    const R=await getJSON(`${RAPI}/readings/${y}/${m}-${d}.json`);
-    let cal=null;try{cal=await getJSON(`${RAPI}/liturgical-calendar/${y}/${m}-${d}.json`)}catch(e){}
+    let R;try{R=await getJSON(`readings/${y}/${m}-${d}.json`)}catch(e){R=await getJSON(`${RAPI}/readings/${y}/${m}-${d}.json`)}
+    let cal=null;try{cal=await getJSON(`liturgical-calendar/${y}/${m}-${d}.json`)}catch(e){try{cal=await getJSON(`${RAPI}/liturgical-calendar/${y}/${m}-${d}.json`)}catch(e2){}}
     const rs=R.readings||{};const parts=[['First reading','firstReading'],['Responsorial psalm','psalm'],['Second reading','secondReading'],['Gospel','gospel']].filter(([,k])=>rs[k]);
     let celeb='';if(cal){const c=cal.celebration||cal;celeb=typeof c==='string'?c:(c.name||c.title||'')}
     const out={state:'ok',season:R.season||'',celebration:celeb,usccb:R.usccbLink||'',items:[]};
@@ -538,7 +538,7 @@ function vReadings(){
   if(R.state==='error')return h+`<div class="empty"><h2>Couldn't load the readings</h2><p>Check your internet connection and try again.</p><button class="btn pri" data-act="rdretry">Try again</button></div>`+links;
   R.items.forEach(it=>{h+=`<div class="rd" style="--rs:${S.rdSize||1}"><div class="lbl">${esc(it.lbl.toUpperCase())}</div><div class="ref">${esc(it.ref)}</div>`+
     (it.ps?`<div class="txt">${it.ps.verses.map(v=>`<sup>${v.v}</sup>${esc(v.t)}`).join(' ')}</div><p class="tr">${esc(it.ps.tr)}</p>`:`<p class="note">The text for this reading couldn't be loaded. Use the links below.</p>`)+`</div>`});
-  return h+`<p class="small muted" style="text-align:center">Which readings to read each day: Catholic Readings API. Text: NABRE via BibleGet I/O (falls back to Douay-Rheims if unavailable).</p>`;
+  return h+`<p class="small muted" style="text-align:center">Which readings to read each day: Catholic Readings API (MIT licence). Text: NABRE via BibleGet I/O (falls back to Douay-Rheims if unavailable).</p>`;
 }
 function vToday(){
   const p=prof();const pr=p.program;let h='';

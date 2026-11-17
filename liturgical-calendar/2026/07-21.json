@@ -1,0 +1,12 @@
+{
+  "date": "2026-07-21",
+  "monthDay": "7/21",
+  "season": "Ordinary Time",
+  "celebration": {
+    "name": "Saint Lawrence of Brindisi, Priest and Doctor",
+    "type": "OPT_MEMORIAL",
+    "quote": "All for the honor and glory of God.",
+    "description": "Capuchin friar, Doctor of the Church, and gifted linguist who led Catholic armies armed only with a crucifix during the Turkish invasion of Hungary."
+  },
+  "apiEndpoint": "https://cpbjr.github.io/catholic-readings-api/liturgical-calendar/2026/07-21.json"
+}
