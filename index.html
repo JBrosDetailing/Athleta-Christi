@@ -43,6 +43,8 @@ header h1{font-size:21px;font-weight:700;letter-spacing:.06em;flex:1;min-width:0
 .who{display:flex;align-items:center;gap:8px;max-width:46vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:5px 12px 5px 5px;border-radius:99px;background:var(--surface2);font-weight:600;font-size:15px}
 .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#0a1c33;flex:none;font-family:var(--display)}
 
+html.sa,html.sa body{height:100vh;height:100lvh}
+html.sa body{bottom:auto}
 main>*{flex-shrink:0;min-width:0;max-width:100%}
 .chips,.prog,.backbar{max-width:none}
 .fi,select.fi{min-width:0;max-width:100%}
@@ -1012,6 +1014,14 @@ Object.assign(A,{
   obdone(){S.welcomed=true;S.onboarded=true;save(true);$('#ob').classList.remove('on');render(false)},
   setup(){closeSheet();obOpen()},
 });
+
+/* ---------- full-height fix for home-screen apps (iOS sizes the viewport short) ---------- */
+function fitScreen(){if(!standalone())return;document.documentElement.classList.add('sa');const b=document.body;b.style.height='';
+  const land=Math.abs(window.orientation||0)===90||innerWidth>innerHeight;const full=land?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height);
+  const h=b.getBoundingClientRect().height;if(full>h+8&&full-h<200)b.style.height=full+'px'}
+['resize','orientationchange','pageshow'].forEach(e=>addEventListener(e,()=>setTimeout(fitScreen,60)));
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')setTimeout(fitScreen,60)});
+fitScreen();
 
 /* ---------- boot ---------- */
 resetPos();render(false);
